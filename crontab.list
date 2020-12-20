@@ -1,0 +1,2 @@
+*/30 * * * * /usr/local/bin/python3.9 /root/python/xmly/xmly_speed.py
+*/11 * * * * /usr/local/bin/python3.9 /root/python/qq_read/scripts/qq_read.py
