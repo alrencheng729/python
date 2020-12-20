@@ -12,12 +12,12 @@ notify:
       BARK_MACHINE_CODE:
     telegram_bot:
       # 暂时自行百度google
-      TG_BOT_TOKEN:
-      TG_USER_ID:
+      TG_BOT_TOKEN: 1317748506:AAEKQmM2BaSqoy15-g7iyBQt7_wTFhzjFyE
+      TG_USER_ID: 1048811889
     dingding_bot:
       # 钉钉机器人，参考教程：https://ding-doc.dingtalk.com/doc#/serverapi2/qf2nxq 在"安全设置"中选择"加签"（必须勾选），其他不懂不要勾选
-      DD_BOT_ACCESS_TOKEN: 1317748506:AAEKQmM2BaSqoy15-g7iyBQt7_wTFhzjFyE
-      DD_BOT_SECRET: 1048811889
+      DD_BOT_ACCESS_TOKEN: 
+      DD_BOT_SECRET: 
     server_chan:
       # 未测试
       # ServerChan，参考教程：http://sc.ftqq.com/3.version
@@ -32,10 +32,7 @@ jobs:
     skip_check_script_version: false # 默认不跳过版本检测
     notify: true # true 启用消息推送； false 不启用消息推送（默认不发消息推送）
     notify_mode:  # 如果全都配置了，可以根据自身需求进行消息推送方式的选择，不需要的可以注释掉或者删除。由于 bark 消息长度的限制，不推荐 bark
-      - bark
       - telegram_bot
-      - dingding_bot
-      - server_chan
     parameters:
       UPLOAD_TIME: 5 # 每次上传阅读时长（单位分钟）
       MAX_READ_TIME: 600 # 每日最大阅读时长（单位分钟）
@@ -44,7 +41,7 @@ jobs:
           BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.9","os_ver":"iOS 14.1","mp_ver":"0.33.3","mpos_ver":"1.19.0","brand":"iPhone","model":"iPhone XR<iPhone11,8>","screenWidth":414,"screenHeight":896,"windowWidth":414,"windowHeight":813,"openid":"3DEA0C9767AA7A598B5AF2AE919AAEBB","guid":1034633565,"session":"jepm2q23ldnuwo2tqtc3zf1u9nx0g2yz","scene":1007,"source":"wza0005wzb0004","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"219747","cid":"1"},"dis":1607697081746,"ext6":59,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"219747","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1007_219747"}]}
           BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1007&refer=pages%2Findex%2Findex&bid=219747&readTime=12829&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A12829%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: true # 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
-          HOSTING_MODE: false # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
+          HOSTING_MODE: true # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
         - HEADERS: {"ywsession":"b2evts006k3vymp3jdjjgcp4mqkadzyh","Cookie":"ywguid=3036399626;ywkey=ywUfJLoFrxop;platform=ios;channel=mqqmina;mpVersion=0.33.3;qq_ver=8.4.9;os_ver=iOS 14.1;mpos_ver=1.19.0;platform=ios;openid=018137678823C25C2A91DCA6D3F4E910","mpversion":"0.33.3","Connection":"keep-alive","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.9.604 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.33.3/page-frame.html","Accept-Encoding":"gzip, deflate, br","Accept-Language":"zh-cn"}
           BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.9","os_ver":"iOS 14.1","mp_ver":"0.33.3","mpos_ver":"1.19.0","brand":"iPhone","model":"iPhone XR<iPhone11,8>","screenWidth":414,"screenHeight":896,"windowWidth":414,"windowHeight":813,"openid":"018137678823C25C2A91DCA6D3F4E910","guid":3036399626,"session":"b2evts006k3vymp3jdjjgcp4mqkadzyh","scene":1008,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"325066","cid":"1"},"dis":1607697229878,"ext6":102,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"325066","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1008_325066"}]}
           BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1008&refer=pages%2Findex%2Findex&bid=325066&readTime=6959&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A6959%2C%22pay_status%22%3A0%2C%22is_tail%22%3A0%7D%7D%5D&sp=-1
@@ -54,27 +51,27 @@ jobs:
           BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.9","os_ver":"iOS 14.1","mp_ver":"0.33.3","mpos_ver":"1.19.0","brand":"iPhone","model":"iPhone XR<iPhone11,8>","screenWidth":414,"screenHeight":896,"windowWidth":414,"windowHeight":813,"openid":"07ACBEEF27C4A42ED08B3753BAC06D28","guid":1796712148,"session":"xk6ds688ba5awwfulc0n8m8uvh88bq2v","scene":1007,"source":"wza0005wzb0004","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"354053","cid":"1"},"dis":1607697425316,"ext6":43,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"354053","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1007_354053"}]}
           BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1007&refer=pages%2Findex%2Findex&bid=354053&readTime=5327&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A5327%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: true# 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
-          HOSTING_MODE: false # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
+          HOSTING_MODE: true # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
         - HEADERS: {"ywsession":"iuautu4ebhnv8dpff4u7rqhidmia9het","Cookie":"ywguid=2210262720;ywkey=yw0mV4HhWIQV;platform=ios;channel=mqqmina;mpVersion=0.33.3;qq_ver=8.4.9;os_ver=iOS 14.1;mpos_ver=1.19.0;platform=ios;openid=0356CE5D0E9ED78D1FAD1BC25892C3FF","mpversion":"0.33.3","Connection":"keep-alive","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.9.604 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.33.3/page-frame.html","Accept-Encoding":"gzip, deflate, br","Accept-Language":"zh-cn"}
           BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.9","os_ver":"iOS 14.1","mp_ver":"0.33.3","mpos_ver":"1.19.0","brand":"iPhone","model":"iPhone XR<iPhone11,8>","screenWidth":414,"screenHeight":896,"windowWidth":414,"windowHeight":813,"openid":"0356CE5D0E9ED78D1FAD1BC25892C3FF","guid":2210262720,"session":"iuautu4ebhnv8dpff4u7rqhidmia9het","scene":3001,"source":-1,"hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"187001","cid":"1"},"dis":1607697459196,"ext6":22,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"187001","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"3001_187001"}]}
           BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=3001&refer=pages%2Findex%2Findex&bid=187001&readTime=6385&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A6385%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: true# 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
-          HOSTING_MODE: false# 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
+          HOSTING_MODE: true# 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
         - HEADERS: {"ywsession":"9b79st7amqau2s1h7ue1puykjry0kmuk","Cookie":"ywguid=2287162339;ywkey=yw3oBvXPFicD;platform=ios;channel=mqqmina;mpVersion=0.33.3;qq_ver=8.4.9;os_ver=iOS 14.1;mpos_ver=1.19.0;platform=ios;openid=33C10B7E6A6E3C7FE28390DB8A66107C","mpversion":"0.33.3","Connection":"keep-alive","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.9.604 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.33.3/page-frame.html","Accept-Encoding":"gzip, deflate, br","Accept-Language":"zh-cn"}
           BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.9","os_ver":"iOS 14.1","mp_ver":"0.33.3","mpos_ver":"1.19.0","brand":"iPhone","model":"iPhone XR<iPhone11,8>","screenWidth":414,"screenHeight":896,"windowWidth":414,"windowHeight":813,"openid":"33C10B7E6A6E3C7FE28390DB8A66107C","guid":2287162339,"session":"9b79st7amqau2s1h7ue1puykjry0kmuk","scene":1007,"source":"wza0005wzb0004","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"354053","cid":"1"},"dis":1607697550358,"ext6":113,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"354053","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1007_354053"}]}
           BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1007&refer=pages%2Findex%2Findex&bid=354053&readTime=3854&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A3854%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: true# 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
-          HOSTING_MODE: false# 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
+          HOSTING_MODE: true# 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
         - HEADERS: {"ywsession":"10zthrmj4un59olotj7m3ldu1dzyjkct","Cookie":"ywguid=1592743408;ywkey=yw0moz6kH8TD;platform=ios;channel=mqqmina;mpVersion=0.33.3;qq_ver=8.4.9;os_ver=iOS 14.1;mpos_ver=1.19.0;platform=ios;openid=F85A383EB00BB94E3541F8C2EC6F77EE","mpversion":"0.33.3","Connection":"keep-alive","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.9.604 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.33.3/page-frame.html","Accept-Encoding":"gzip, deflate, br","Accept-Language":"zh-cn"}
           BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.9","os_ver":"iOS 14.1","mp_ver":"0.33.3","mpos_ver":"1.19.0","brand":"iPhone","model":"iPhone XR<iPhone11,8>","screenWidth":414,"screenHeight":896,"windowWidth":414,"windowHeight":813,"openid":"F85A383EB00BB94E3541F8C2EC6F77EE","guid":1592743408,"session":"10zthrmj4un59olotj7m3ldu1dzyjkct","scene":1007,"source":"wza0005wzb0004","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"414745","cid":"1"},"dis":1607697650973,"ext6":27,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"414745","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1007_414745"}]}
           BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1007&refer=pages%2Findex%2Findex&bid=414745&readTime=5504&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A5504%2C%22pay_status%22%3A0%2C%22is_tail%22%3A1%7D%7D%5D&sp=-1
           WITHDRAW: true# 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
-          HOSTING_MODE: false # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
+          HOSTING_MODE: true # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
         - HEADERS: {"ywsession":"ulw3lg94d0e0sa21g0z4f66aezsocymh","Cookie":"ywguid=3530905086;ywkey=ywbVWgOGousc;platform=ios;channel=mqqmina;mpVersion=0.33.3;qq_ver=8.4.9;os_ver=iOS 14.1;mpos_ver=1.19.0;platform=ios;openid=4235038E054308633FED699EAFFC4A93","mpversion":"0.33.3","Connection":"keep-alive","Host":"mqqapi.reader.qq.com","User-Agent":"QQ/8.4.9.604 CFNetwork/1197 Darwin/20.0.0","Referer":"https://appservice.qq.com/1110657249/0.33.3/page-frame.html","Accept-Encoding":"gzip, deflate, br","Accept-Language":"zh-cn"}
           BODY: {"common":{"appid":1450024394,"areaid":5,"qq_ver":"8.4.9","os_ver":"iOS 14.1","mp_ver":"0.33.3","mpos_ver":"1.19.0","brand":"iPhone","model":"iPhone XR<iPhone11,8>","screenWidth":414,"screenHeight":896,"windowWidth":414,"windowHeight":813,"openid":"4235038E054308633FED699EAFFC4A93","guid":3530905086,"session":"ulw3lg94d0e0sa21g0z4f66aezsocymh","scene":1007,"source":"wza0005wzb0004","hasRedDot":"false","missions":-1,"caseID":-1},"dataList":[{"click1":"bookDetail_bottomBar_read_C","click2":"bookStore_newCI_unit_C","route":"pages/book-read/index","refer":"pages/book-detail/index","options":{"bid":"24058993","cid":"1"},"dis":1607697702265,"ext6":28,"eventID":"bookRead_show_I","type":"shown","ccid":1,"bid":"24058993","bookStatus":1,"bookPay":0,"chapterStatus":0,"ext1":{"font":18,"bg":0,"pageMode":1},"from":"1007_24058993"}]}
           BOOK_URL: https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1007&refer=pages%2Findex%2Findex&bid=24058993&readTime=4951&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%221%22%3A%7B%22readTime%22%3A4951%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1
           WITHDRAW: true# 默认不启用提现功能，启用前必须保证账号已经实名认证（模式：满额提现，每天23点以后开始尝试提现，每次提现10元，不满10元不提现，不使用2元和1元提现次数）
-          HOSTING_MODE: false # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
+          HOSTING_MODE: true # 默认不启用托管提现，若启用则必须在 WITHDRAW 为 true 下才有效（模式：托管提现，建议放弃薅此羊毛时候打开，将使用剩余的2元和1元提现次数将剩余金币最大程度转化为rmb）
   bilibili:
     # 使用前请阅读 https://raw.githubusercontent.com/TNanko/Scripts/master/scripts/bilibil.py 前12行使用说明
     enable: false # true 启用脚本； false 不启用脚本（默认不启用脚本）
