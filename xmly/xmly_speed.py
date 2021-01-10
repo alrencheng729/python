@@ -15,10 +15,11 @@ import re
 
 ###################################################
 # 对应方案2: 下载到本地,需要此处填写
-cookies1 = "1&_device=iPad&D9D48485-3195-4B11-80A8-9DEFA73FA266&1.1.10; 1&_token=108804625&25378100340C6E70891D2973E4E2DAFD4B399D304E3A892B70422DA98EB69DBFCB6C01486B1798MD550DF6147F69D9_; NSUP=; XUM=D9D48485-3195-4B11-80A8-9DEFA73FA266; _xmLog=h5&dcaebe8a-e17c-4b3d-bf38-7f0a1d586f2b&2.2.5; ainr=0; c-oper=%E6%9C%AA%E7%9F%A5; channel=ios-b1; device_model=iPad Air 3; idfa=D9D48485-3195-4B11-80A8-9DEFA73FA266; impl=com.ximalaya.tingLite; ip=172.28.149.65; net-mode=WIFI; res=750%2C1334"
-cookies2 = "1&_device=iPhone&802F98D8-E5FB-41C8-8B3F-DAFE481DC15D&1.1.10; 1&_token=259702893&C9088210140C382A8FE5B984B3DA09F6BB6E651D337A2CAA0310E8ED24BAE48C2C02885812A2111M28BBAE5D6127EF2_; NSUP=42EF1837%2C421FAE53%2C1607700447232; XUM=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; _xmLog=h5&b9fbe3d9-31d8-4f64-b923-b12720f6fa7a&2.2.5; ainr=0; c-oper=%E7%A7%BB%E5%8A%A8; channel=ios-b1; device_model=iPhone XR; idfa=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; impl=com.ximalaya.tingLite; ip=10.63.190.127; net-mode=4G; res=828%2C1792"
-cookies3 = "1&_device=iPhone&802F98D8-E5FB-41C8-8B3F-DAFE481DC15D&1.1.10; 1&_token=259611299&A9654910140CCCC74DD46923396B981278BB8DBFED707C5C5568696D051F97995205CDDF2CBF174M28BBAE5079FF30A_; NSUP=42EF1837%2C421FAE53%2C1607700447232; XUM=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; ainr=0; c-oper=%E6%9C%AA%E7%9F%A5; channel=ios-b1; device_model=iPhone XR; idfa=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; impl=com.ximalaya.tingLite; ip=10.63.190.127; net-mode=WIFI; res=828%2C1792; _xmLog=h5&165ec30d-e668-488d-8bb0-d5e96e1b2dd2&2.2.5"
-cookiesList = [cookies1, cookies2, cookies3]   # 多账号准备
+cookies1 = "1&_device=iPhone&802F98D8-E5FB-41C8-8B3F-DAFE481DC15D&1.1.10; 1&_token=108804625&8271CE90140C1F48D0AC6C0CEDE9D4BB88D270FE9D89B06CD5344EF172C6FD65BDCB2E07454F96M28BBAE5109C4289_; NSUP=42E923C1%2C41F522BA%2C1610254778368; XUM=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; _xmLog=h5&0eea9f94-9142-4a34-8cf8-ebc4dafa1297&2.2.5; ainr=0; c-oper=%E6%9C%AA%E7%9F%A5; channel=ios-b1; device_model=iPhone XR; idfa=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; impl=com.ximalaya.tingLite; ip=2408:8546:64a0:6830:c0:442:100:0; net-mode=WIFI; res=828%2C1792"
+cookies2 = "1&_device=iPhone&802F98D8-E5FB-41C8-8B3F-DAFE481DC15D&1.1.10; 1&_token=259702893&12C2E1A0240CE52E0CD7B423E6CDA2A7923B06081E28DC9E36B492F06AA68CD79CEBBCA3B46D98M28BBAE5EA5F4062_; NSUP=42E923C1%2C41F522BA%2C1610254778368; XUM=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; ainr=0; c-oper=%E6%9C%AA%E7%9F%A5; channel=ios-b1; device_model=iPhone XR; idfa=802F98D8-E5FB-41C8-8B3F-DAFE481DC15D; impl=com.ximalaya.tingLite; ip=2408:8546:64a0:6830:c0:442:100:0; net-mode=WIFI; res=828%2C1792; _xmLog=h5&caf3e10e-5bbb-45c7-946a-09316b4ad7f2&2.2.5"
+cookies3 = "1&_device=iPad&D9D48485-3195-4B11-80A8-9DEFA73FA266&1.1.10; 1&_token=258731927&14301320140C7C1779033147B5B860673C52CE808BAAA7DA1A1B53D26475A9F08CDDB5E9E985162MD550DF6BFEA0164_; NSUP=42E923B5%2C41F5228F%2C1610255040512; XUM=D9D48485-3195-4B11-80A8-9DEFA73FA266; ainr=0; c-oper=%E6%9C%AA%E7%9F%A5; channel=ios-b1; device_model=iPad Air 3; idfa=D9D48485-3195-4B11-80A8-9DEFA73FA266; impl=com.ximalaya.tingLite; ip=192.168.10.3; net-mode=WIFI; res=750%2C1334; _xmLog=h5&1313907b-c9b5-47c2-8346-8b019c366653&2.2.5"
+cookies4 = "1&_device=iPad&D9D48485-3195-4B11-80A8-9DEFA73FA266&1.1.10; 1&_token=259611299&6FEAAC40240CD0E25812A8AC37D3B9EAD8513EF44C3A0924F957DB5581C9F7E98A9F2A7A97C498MD550DF6671A7764_; NSUP=42E923B1%2C41F5229A%2C1610255302656; XUM=D9D48485-3195-4B11-80A8-9DEFA73FA266; _xmLog=h5&7e4b190a-81ad-46c0-935a-5c3e4e85f655&2.2.5; ainr=0; c-oper=%E6%9C%AA%E7%9F%A5; channel=ios-b1; device_model=iPad Air 3; idfa=D9D48485-3195-4B11-80A8-9DEFA73FA266; impl=com.ximalaya.tingLite; ip=192.168.10.3; net-mode=WIFI; res=750%2C1334"
+cookiesList = [cookies1, cookies2, cookies3, cookies4]   # 多账号准备
 
 # 通知服务
 BARK = ''                   # bark服务,自行搜索; secrets可填;形如jfjqxDx3xxxxxxxxSaK的字符串
@@ -55,10 +56,10 @@ if "XMLY_SPEED_COOKIE" in os.environ:
 ###################################################
 # 可选项
 # 自定义设备命名,非必须 ;devices=["iPhone7P","huawei"];与cookiesList对应
-devices = []
+devices = ["秦皇岛_IPHONE","内蒙_IPHONE","安徽_PAD","上海_PAD"]
 notify_time = 19                            # 通知时间,24小时制,默认19
 XMLY_ACCUMULATE_TIME = 1                    # 希望刷时长的,此处置1,默认打开;关闭置0
-UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 iting/1.0.12 kdtunion_iting/1.0 iting(main)/1.0.12/ios_1"
+UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) Apple xWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 iting/1.0.12 kdtunion_iting/1.0 iting(main)/1.0.12/ios_1"
 # 非iOS设备的需要的自行修改,自己抓包 与cookie形式类似
 
 
@@ -1030,7 +1031,7 @@ def run():
 
         print("###"*20)
         print("\n"*4)
-    if _notify_time.split()[0] == str(notify_time) and int(_notify_time.split()[1]) > 30:
+    if 1:
         # if 1:
         message = ''
         for i in table:
